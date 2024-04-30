@@ -1,0 +1,9 @@
+---
+name: update web, nfs, and db server
+hosts: webserver, nfs, db
+become: yes
+tasks:
+   - name: ensure wireshark is at its latest
+      yum: 
+         name: wireshark
+         state: latest
