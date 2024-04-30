@@ -3,7 +3,6 @@
    hosts: webserver, nfs, db
    remote_user: ec2-user
    become: yes
-   become: root
    tasks:
       - name: ensure wireshark is at its latest version
         yum:
