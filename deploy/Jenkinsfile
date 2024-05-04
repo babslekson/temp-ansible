@@ -3,6 +3,15 @@ pipeline {
 
 
   stages {
+
+    stage('initial clean-up') {
+      steps {
+        dir("${WORKSPACE}") {
+            deleteDir()
+        }
+      }
+    }
+
     stage('Build') {
       steps {
         script {
@@ -19,13 +28,7 @@ pipeline {
       }
     }
 
-    stage('initial clean-up') {
-      steps {
-        dir("${WORKSPACE}") {
-            deleteDir()
-        }
-      }
-    }
+    
     
     stage('package') {
       steps {
