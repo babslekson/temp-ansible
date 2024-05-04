@@ -19,8 +19,6 @@ pipeline {
         }
       }
     }
-
-    
     
     stage('package') {
       steps {
@@ -35,12 +33,6 @@ pipeline {
         script {
           sh 'echo "Deploying Stage"'
         }
-      }
-    }
-
-    stage('Clean up') {
-      steps {
-        cleanWs()
       }
     }
 }
